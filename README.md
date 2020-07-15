@@ -10,9 +10,9 @@
     This project is developed as a part of PClub Summer of Code
     <br />
     <br />
-    <a href="https://github.com/und3fined-v01d/apply-by-ai/issues">Report Bug</a>
+    <a href="https://github.com/vrushti-mody/Job.Org/issues">Report Bug</a>
     ·
-    <a href="https://github.com/und3fined-v01d/apply-by-ai/issues">Submit Feature</a>
+    <a href="https://github.com/vrushti-mody/Job.Org/issues">Submit Feature</a>
   </p>
 </p>
 
