@@ -1,60 +1,54 @@
-# AdminKit
+<p align="center">
+  
 
-A professional Web UI Kit & Dashboard template based on Bootstrap that comes with hundreds of UI components, forms, tables, charts, pages and icons.
+  <h3 align="center">Job.Org</h3>
+  <p align="center">
+     An application that will help blue collar workers find jobs, and find a way to life with dignity. 
+    <br/>
+    <br/>
+    The website will be launched with basic features and it will be developed in an open source manner. Anyone is welcome to contribute.
+    This project is developed as a part of PClub Summer of Code
+    <br />
+    <br />
+    <a href="https://github.com/und3fined-v01d/apply-by-ai/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/und3fined-v01d/apply-by-ai/issues">Submit Feature</a>
+  </p>
+</p>
 
-<strong><a href="https://demo.adminkit.io/">View Demo</a> | <a href="https://github.com/adminkit/adminkit/archive/master.zip">Download ZIP</a> | <a href="https://adminkit.io/">Visit Website</a></strong>
+<!-- TABLE OF CONTENTS -->
 
-[![AdminKit Demo](/src/img/screenshot.png)](https://demo.adminkit.io/)
+## Table of Contents
 
-## Status
+- [About the Project](#about-the-project)
+  - [Features](#features)
+  - [Contributors](#contributors)
 
-![version](https://img.shields.io/badge/version-1.0.1-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/adminkit/adminkit.svg)](https://github.com/adminkit/adminkit/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/adminkit/adminkit.svg)](https://github.com/adminkit/adminkit/issues?q=is%3Aissue+is%3Aclosed)
+## About The Project
 
-## Features
+Due to Covid-19 many have lost their jobs, the only source of their income. 
 
-* **Customizable:** You don't need to be an expert to customize AdminKit. Our code is very readable and well documented.
-* **Fully Responsive:** With mobile, tablet & desktop support it doesn't matter what device you're using. AdminKit is responsive in all browsers.
-* **Cross Browser:** Our themes are working perfectly with: Chrome, Firefox, Safari, Opera and Edge. We're working hard to support them.
-* **HTML5 & CSS3:** We use only modern web technologies, such as HTML5 and CSS3. AdminKit includes some subtle CSS3 animations, which will help you attract attention.
-* **Clean Code:** We strictly follow Bootstrap's guidelines to make your integration as easy as possible. All code is handwritten.
-* **Regular Updates:** From time to time you'll receive an update containing new components, improvements and bugfixes.
+I want to help those people find jobs as soon as possible. Many websites such as LinkedIn, Naukri, indeed, and other reputed sites are too difficult to navigate or their primary focus group is people with degrees. 
 
-## Quick start
+The sites are not meant for blue collar workers by the virtue of design. Also the language barrier does not help. 
 
-### Download
+I would like to give my time to build a website that will help people find jobs, and find a way to life with dignity. The website will be launched with basic features and it will be developed in an open source manner. 
 
-* Clone this repo `git clone https://github.com/adminkit/adminkit.git`
-* [Download from GitHub](https://github.com/adminkit/adminkit/archive/master.zip)
-* [Download from Website](https://adminkit.io/#download)
 
-### Build tools
+### Features
 
-The theme includes a custom Webpack file, which can be used to quickly recompile and minify theme assets while developing or for deployment. You'll need to install Node.js before using Webpack.
+#### 1. Helps Workers Find Jobs
 
-Once Node.js is installed, run npm install to install the rest of AdminKit's dependencies. All dependencies will be downloaded to the node_modules directory.
+Amidst the COVID-19 Pandemic, this will be an effective way to help workers find jobs.
 
-```sh
-npm install
-```
+#### 2. Benefits to the Employer
 
-Now you're ready to modify the source files and generate new dist/ files. AdminKit uses webpack-dev-server to automatically detect file changes and start a local webserver at http://localhost:8080.
+Our platform lets users post jobs for free. Rather than calling up thousands of people to get house help or for anything else, you can easily get people who are willing to work on this application
 
-```sh
-npm start
-```
+#### 3. Language Translation
 
-Compile, optimize, minify and uglify all source files to dist/ folder:
+The application can be translated to the users native language for better user experience.
 
-```sh
-npm run build
-```
+### Contributors
 
-## Bugs and feature requests
-
-Found a bug or have a feature request? [Please open a new issue](https://github.com/adminkit/adminkit/issues/new).
-
-## Upgrade to Pro version
-
-Get more power with "[AdminKit Pro - Web UI Kit & Dashboard Template](https://adminkit.io/)". It has many more features compared to the free version to help create awesome apps!
-
-[Upgrade to Pro »](https://adminkit.io/pricing)
+- [Vrushti Mody](https://github.com/vrushti-mody)
