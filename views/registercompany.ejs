@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Responsive Web UI Kit &amp; Dashboard Template based on Bootstrap">
+		<meta name="author" content="AdminKit">
+		<meta name="keywords" content="adminkit, bootstrap, web ui kit, dashboard template, admin template">
+	
+		<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+	
+		<title>Jorb.Org</title>
+	
+		<link href="../css/app.css" rel="stylesheet">
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$( "#form1" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/',
+					data: $('#form1').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form1')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="You are regestered,You can login now") {
+								 document.getElementById("aa").click();
+								 
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</head>
+
+<body>
+	
+		<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">Company Sign Up</h1>
+
+					<div class="row">
+						
+
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Register Now</h5>
+								
+								</div>
+								<div class="card-body">
+									<form id = "form1" method="post">
+										<div class="form-row">
+												<div class="form-group col-md-6">
+														<label for="name">Name</label>
+														<input type="text" class="form-control" id="name" name="name" placeholder="Name" required/>
+													</div>
+													<div class="form-group col-md-6">
+														<label for="email">Email</label>
+														<input type="email" class="form-control" id="email" name="email" placeholder="Email" required/>
+													</div>
+											<div class="form-group col-md-6">
+												<label for="password">Password</label>
+												<input type="password" class="form-control" id="password" name="password" placeholder="Pssword" required/>
+											</div>
+											<div class="form-group col-md-6">
+												<label for="cpassword">Confirm Password</label>
+												<input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" required/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputAddress">Address</label>
+											<input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" required />
+										</div>
+										<div class="form-group">
+											<label for="inputAddress2">Address 2</label>
+											<input type="text" class="form-control" id="inputAddress2" name="Address2" placeholder="Apartment, studio, or floor" required />
+										</div>
+										<div class="form-row">
+											<div class="form-group col-md-6">
+												<label for="inputCity">City</label>
+												<input type="text" class="form-control" name="city" id="inputCity" required />
+											</div>
+											<div class="form-group col-md-4">
+												<label for="inputState">State</label>
+												<select id="inputState" name="state" class="form-control">
+													<option selected>Andhra pradesh</option>
+													<option>Arunachal pradesh</option>
+													<option>Assam</option>
+													<option>Bihar</option>
+													<option>Chattisgarh</option>
+													<option>Goa</option>
+													<option>Gujarat</option>
+													<option>Haryana</option>
+													<option>Himachal pradesh</option>
+													<option>Jammu and Kashmir</option>
+													<option>Jharkhand</option>
+													<option>Karnataka</option>
+													<option>Kerala</option>
+													<option>Madhya pradesh</option>
+													<option>Maharastra</option>
+													<option>Manipur</option>
+													<option>Meghalaya</option>
+													<option>Mizoram</option>
+													<option>Nagaland</option>
+													<option>Odisha</option>
+													<option>Punjab</option>
+													<option>Rajasthan</option>
+													<option>Sikkim</option>
+													<option>Tamil Nadu</option>
+													<option>Telangana</option>
+													<option>Tripura</option>
+													<option>Uttar pradesh</option>
+													<option>Uttarkhand</option>
+													<option>West bengal</option>
+              								</select>
+											</div>
+											<div class="form-group col-md-2">
+												<label for="inputZip">Zip</label>
+												<input type="text" class="form-control" name="zip" id="inputZip" required />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input" required />
+              <span class="custom-control-label">I agree to the Terms and Conditions and Privacy Policy</span>
+            </label>
+										</div>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<p>Have an account? <a href="/company/">Login</a></p>
+
+					
+					</div>
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="index.html" class="text-muted"><strong>Job.org</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+
+	<script src="../js/app.js"></script>
+</body>
+
+</html>
+
+
+
+
+				
+		
+		
