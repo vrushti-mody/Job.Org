@@ -11,26 +11,7 @@ const ApplicationSchema=mongoose.Schema({
 	useremail:String
 	
 })
-jobSchema = new Schema( {
-	
-	unique_id: Number,
-	email: String,
-	name: String,
-	title: String,
-	location: String,
-	description:String,
-	duration:String,
-	salary:Number,
-	userid:String
-})
 
+Application = mongoose.model('Application', ApplicationSchema);
 
-
-
-Job = mongoose.model('Job', jobSchema);
-
-
-module.exports = Job;
-
-
-
+module.exports = Application;

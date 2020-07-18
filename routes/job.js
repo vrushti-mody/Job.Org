@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
 var User = require('../models/company');
-var Application = require('../models/job');
+var Application = require('../models/application');
 
 
 router.get('/', function (req, res, next) {
@@ -25,6 +25,7 @@ router.post('/', function(req, res, next) {
     console.log(req.body);
     var email;
     var name;
+    userid=req.session.unique_id
     User.findOne({unique_id:req.session.userId},function(err,data){
 		console.log("data");
 		console.log(data);
@@ -54,7 +55,8 @@ router.post('/', function(req, res, next) {
                             location:personInfo.location,
                             description: personInfo.description,
                             duration:personInfo.duration,
-                            salary:personInfo.salary
+                            salary:personInfo.salary,
+                            userid:userid
 						});
 
 						newJob.save(function(err, jobs){
@@ -88,7 +90,7 @@ router.get('/:id', function (req, res, next) {
 		if(!data){
 			res.redirect('/user/profile');
 		}else{
-			Application.findOne({applicationid:id,user_id:userId},function(err,result){
+			Application.findOne({applicationid:id,userid:userId},function(err,result){
 				console.log("data");
 				console.log(data);
 				if(!result){

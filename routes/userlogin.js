@@ -82,7 +82,8 @@ router.post('/register', function(req, res, next) {
 							address2:personInfo.address2,
 							city:personInfo.city,
 							state:personInfo.state,
-							zip:personInfo.zip
+							zip:personInfo.zip,
+							type:personInfo.type
 						});
 
 						newPerson.save(function(err, Person){

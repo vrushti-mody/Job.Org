@@ -11,7 +11,8 @@ userSchema = new Schema( {
 	address2:String,
 	city:String,
 	state:String,
-	zip:String
+	zip:String,
+	type:String
 }),
 User = mongoose.model('User', userSchema);
 

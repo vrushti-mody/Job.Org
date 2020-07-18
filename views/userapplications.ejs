@@ -29,13 +29,13 @@
 						
 					</li>
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="/user/dashboard">
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="/user/profile">
               <i class="align-middle" data-feather="star"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="/application/user">
               <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">My Applications</span>
             </a>
 					</li>
@@ -238,88 +238,30 @@
 					</ul>
 				</div>
 			</nav>
-            
-            <main class="content">
+			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3"><%= data.title%></h1>
+					<h1 class="h3 mb-3">Jobs</h1>
 
 					<div class="row">
-						<div class="col-12">
-							<div class="card">
-								<div class="card-body m-sm-3 m-md-5">
-									<div style="white-space: pre-wrap" class="mb-4">
-										 <strong>Job Description</strong>
-										<br /> <%= data.description %>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6">
-											<div class="text-muted">Location</div>
-											<strong><%= data.location %></strong>
-										</div>
-										<div class="col-md-6 text-md-right">
-											<div class="text-muted">Salary</div>
-											<strong>Rs <%= data.salary %></strong>
-										</div>
-                                    </div>
-                                    <hr class="my-4" />
-                                    <div class="row">
-										<div class="col-md-6">
-											<div class="text-muted">Duration</div>
-											<strong><%= data.duration %></strong>
-										</div>
-										<div class="col-md-6 text-md-right">
-											<div class="text-muted">Job posted by</div>
-											<strong> <%= data.name %></strong>
-										</div>
-									</div>
-
-									<hr class="my-4" />
-
-                                    <% if (apply==="false") {%>
-									<div class="text-center">
-										<p class="text-sm">
-											<strong>Think you are the right match for the job?</strong> 
-										</p>
-                                        <form action="/job/<%= data.unique_id %>" method="post">
-                                            <input type="hidden" id="title" name="title" value="<%= data.title%>">
-                                            <input type="hidden" id="salary" name="salary" value="<%= data.salary%>">
-
-										<button class="btn btn-primary" type="submit">
-                                        Apply Now
-                                        </button>
-                                    </form>
-                                    </div>
-                                    <% }if (apply==="true")  {%>
-                                        <div class="text-center">
-                                            <p class="text-sm">
-                                                <strong>You seem to like this job</strong> 
-                                            </p>
-                                           
-    
-                                            <button class="btn btn-default" action="#">
-                                            Already applied
-                    
-                                            </form>
-                                        </div>
-                                        <% } %>
-								</div>
-							</div>
-						</div>
+							<% for(var i=0; i<result.length; i++) {%>
+									
+								
+			<div class="col-12 col-md-6 col-lg-6">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title mb-0"><%= result[i].title%></h4>
 					</div>
-
+					<div class="card-body">
+						<p class="card-text">Salary: <%= result[i].salary%></p>
+						<a href='../job/<%= result[i].applicationid %>' class="btn btn-primary">Know more</a>
+					</div>
 				</div>
+			</div>
+			<% } %>
+			</div>
+			</div>
 			</main>
-
-
-
-
-
-
-
-
-
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
@@ -349,7 +291,7 @@
 			</footer>
 		</div>
 	</div>
-
+	
 	<script src="../js/vendor.js"></script>
 	<script src="../js/app.js"></script>
 	

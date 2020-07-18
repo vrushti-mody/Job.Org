@@ -3,7 +3,8 @@ module.exports = {
 	UserProfile: require('./userdashboard'),
 	CompanyLogin:require('./companylogin'),
 	CompanyProfile:require('./companydashboard'),
-	Job:require('./job')
+	Job:require('./job'),
+	Application:require('./applications')
 	}
 	
   

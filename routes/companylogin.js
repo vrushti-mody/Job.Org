@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/company');
+var User = require('../models/user');
 
 
 //-----------------------LOGIN ----------------------------------//
@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
 				//console.log("Done Login");
 				req.session.userId = data.unique_id;
 				//console.log(req.session.userId);
-				res.redirect('/companyprofile/dashboard')
+				res.redirect('/user/profile')
 				
 			}else{
 				res.send({"Error":"Wrong email or password!"});

@@ -19,7 +19,7 @@ router.get('/profile', function (req, res, next) {
 				
 					//console.log("found");
 		
-					return res.render('data.ejs', {"name":data.name,"email":data.email,"result":result});
+					return res.render('data.ejs', {"name":data.name,"email":data.email,"type":data.type,"result":result});
 				
 			});
 			

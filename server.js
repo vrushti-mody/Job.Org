@@ -11,10 +11,11 @@ const {
   UserProfile,
   CompanyLogin,
   CompanyProfile,
-  Job
+  Job,
+  Application
 } = require('./routes')
 
-mongoose.connect('mongodb://localhost/ManualAuth');
+mongoose.connect('mongodb://localhost/joborg');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -42,6 +43,7 @@ app.use('/user/', UserProfile)
 app.use('/company/', CompanyLogin)
 app.use('/companyprofile/', CompanyProfile)
 app.use('/job/', Job)
+app.use('/application/', Application)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('File Not Found');
