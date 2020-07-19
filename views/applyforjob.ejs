@@ -282,10 +282,10 @@
 										<p class="text-sm">
 											<strong>Think you are the right match for the job?</strong> 
 										</p>
-                                        <form action="/job/<%= data.unique_id %>" method="post">
+                                        <form action="/job/<%= data.unique_id %>" method="POST">
                                             <input type="hidden" id="title" name="title" value="<%= data.title%>">
                                             <input type="hidden" id="salary" name="salary" value="<%= data.salary%>">
-
+											<input type="hidden" id="companyid" name="companyid" value="<%= data.userid%>">
 										<button class="btn btn-primary" type="submit">
                                         Apply Now
                                         </button>

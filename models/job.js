@@ -1,16 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-const ApplicationSchema=mongoose.Schema({
-    applicationid:{type:Number, required: true},
-    userid:{type:Number, required: true},
-    applicationStatus:{type:String, default: "Applied"},
-	title: String,
-	salary:String,
-	username:String,
-	useremail:String
-	
-})
+
 jobSchema = new Schema( {
 	
 	unique_id: Number,
@@ -21,16 +12,16 @@ jobSchema = new Schema( {
 	description:String,
 	duration:String,
 	salary:Number,
-	userid:String
+	userid:{type:String, required: true}
 })
 
 
 
 
-Job = mongoose.model('Job', jobSchema);
+Job1 = mongoose.model('Job1', jobSchema);
 
 
-module.exports = Job;
+module.exports = Job1;
 
 
 

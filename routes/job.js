@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
-var User = require('../models/company');
+var User = require('../models/user');
 var Application = require('../models/application');
 
 
@@ -24,8 +24,10 @@ router.post('/', function(req, res, next) {
     var personInfo = req.body;
     console.log(req.body);
     var email;
-    var name;
-    userid=req.session.unique_id
+	var name;
+	var id;
+	var userid=req.session.userId
+	console.log(userid);
     User.findOne({unique_id:req.session.userId},function(err,data){
 		console.log("data");
 		console.log(data);
@@ -33,16 +35,18 @@ router.post('/', function(req, res, next) {
 		
 		}else{
             email=data.email;
-            name=data.name}
+			name=data.name
+			id=data.unique_id;
+		}
 	    
 
 		
 		    var c;
-					Job.findOne({},function(err,data){
+					Job.findOne({},function(err,result){
                         
-						if (data) {
+						if (result) {
 							console.log("if");
-							c = data.unique_id + 1;
+							c = result.unique_id + 1;
 						}else{
 							c=1;
 						}
@@ -56,14 +60,15 @@ router.post('/', function(req, res, next) {
                             description: personInfo.description,
                             duration:personInfo.duration,
                             salary:personInfo.salary,
-                            userid:userid
+                            userid:id
 						});
-
+						console.log(newJob);
 						newJob.save(function(err, jobs){
 							if(err)
 								console.log(err);
 							else
 								console.log('Success');
+								res.redirect('/user/profile')
 						});
 
 					}).sort({_id: -1}).limit(1);
@@ -71,7 +76,7 @@ router.post('/', function(req, res, next) {
 					
 			
         
-                return res.redirect('/companyprofile/dashboard')
+                 
 	});
 	
 				
@@ -107,5 +112,43 @@ router.get('/:id', function (req, res, next) {
 	});
 	
 });
+
+router.post('/:id', function(req, res, next) {
+    var appInfo = req.body;
+	console.log(req.body);
+
+	var applicationid= req.params.id
+    var userid=req.session.userId
+	var title=appInfo.title
+	var salary=appInfo.salary
+	
+	var companyid= appInfo.companyid
+	User.findOne({unique_id:req.session.userId},function(err,data){
+	var application = new Application({
+		applicationid:applicationid,
+		userid:userid,
+		title:title,
+		salary:salary,
+		username:data.name,
+		useremail:data.email,
+		companyid:companyid
+	});
+
+	application.save(function(err, jobs){
+		if(err)
+		{
+			console.log(err);
+		}
+		else{
+			 res.redirect('/user/profile')
+		}
+			
+	});
+	});
+		
+});
+
+
+
 
 module.exports = router;
