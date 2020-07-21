@@ -10,9 +10,9 @@ const {
   UserLogin,
   UserProfile,
   CompanyLogin,
-  CompanyProfile,
   Job,
-  Application
+  Application,
+  Profile
 } = require('./routes')
 
 mongoose.connect('mongodb://localhost/joborg');
@@ -41,9 +41,9 @@ app.use(express.static('public'))
 app.use('/', UserLogin)
 app.use('/user/', UserProfile)
 app.use('/company/', CompanyLogin)
-app.use('/companyprofile/', CompanyProfile)
 app.use('/job/', Job)
 app.use('/application/', Application)
+app.use('/profile/', Profile)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('File Not Found');
