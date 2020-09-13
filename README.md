@@ -22,6 +22,7 @@
 
 - [About the Project](#about-the-project)
   - [Features](#features)
+  - [Debelopment](#development)
   - [Contributors](#contributors)
 
 ## About The Project
@@ -48,6 +49,50 @@ Our platform lets users post jobs for free. Rather than calling up thousands of 
 #### 3. Language Translation
 
 The application can be translated to the users native language for better user experience.
+
+
+## Development
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+
+### Prerequisites
+
+Clone the repo and hit npm install.
+
+- npm
+
+```sh
+npm install
+```
+
+### Startup
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/vrushti-mody/Job.Org
+```
+
+2. Install NPM packages
+
+```sh
+npm install
+```
+
+3. Create a .env file in home directory with valid credentials as follows
+
+```
+MONGODB_URI=<your_mongodb URI>
+
+```
+
+4. Start the project
+
+```JS
+npm start
+```
 
 ### Contributors
 
